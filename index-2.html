@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summer 2026 — The Long Way Around</title>
+<meta name="description" content="Greece to Jamaica to home. A summer recap of the places we went and the people we went with.">
+<meta property="og:title" content="Summer 2026 — The Long Way Around">
+<meta property="og:description" content="Greece to Jamaica to home. A summer recap of the places we went and the people we went with.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="greece-red-swimsuit-lake.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12233b;         /* deep passport navy */
+    --ink-soft:#2c4159;
+    --paper:#f6f1e7;       /* warm document paper */
+    --paper-2:#efe7d6;
+    --gold:#e0a025;        /* sun / stamp gold */
+    --coral:#d64a3f;       /* stamp red */
+    --sea:#2f7d8c;         /* aegean teal */
+    --line:rgba(18,35,59,.16);
+    --shadow:0 18px 50px -20px rgba(18,35,59,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Space Grotesk',system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  .mono{font-family:'JetBrains Mono',monospace}
+
+  /* ---------- shared layout ---------- */
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--sea);font-weight:500;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;flex-direction:column;justify-content:space-between;
+    padding:32px 0 40px;
+    background:
+      radial-gradient(120% 80% at 80% 10%, rgba(224,160,37,.14), transparent 60%),
+      var(--ink);
+    color:var(--paper);
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(246,241,231,.05) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(246,241,231,.05) 1px,transparent 1px);
+    background-size:44px 44px;
+    mask-image:radial-gradient(120% 90% at 50% 0%,#000,transparent 75%);
+    pointer-events:none;
+  }
+  .hero .wrap{width:100%;position:relative;z-index:2}
+  .passport-top{
+    display:flex;justify-content:space-between;align-items:center;
+    gap:16px;flex-wrap:wrap;
+    border-bottom:1px solid rgba(246,241,231,.2);
+    padding-bottom:18px;
+  }
+  .passport-top .brand{
+    font-family:'JetBrains Mono',monospace;font-size:.72rem;
+    letter-spacing:.26em;text-transform:uppercase;color:var(--gold);
+  }
+  .passport-top .brand span{color:rgba(246,241,231,.55)}
+  .hero-center{padding:8vh 0 6vh}
+  .hero-kicker{
+    font-family:'JetBrains Mono',monospace;font-size:.78rem;
+    letter-spacing:.24em;text-transform:uppercase;
+    color:rgba(246,241,231,.7);margin-bottom:22px;
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  }
+  .hero-kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--coral);display:inline-block}
+  .hero h1{
+    font-family:'Fraunces',serif;font-weight:900;
+    font-size:clamp(3.2rem,13vw,9rem);
+    line-height:.92;letter-spacing:-.02em;
+  }
+  .hero h1 em{font-style:italic;font-weight:400;color:var(--gold)}
+  .hero-sub{
+    margin-top:26px;max-width:34ch;
+    font-size:clamp(1.05rem,2.4vw,1.3rem);
+    color:rgba(246,241,231,.82);
+  }
+  .stamps{
+    display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;
+  }
+  .stamp{
+    font-family:'JetBrains Mono',monospace;font-size:.7rem;
+    letter-spacing:.16em;text-transform:uppercase;
+    border:1.5px solid rgba(246,241,231,.35);
+    color:rgba(246,241,231,.9);
+    padding:9px 14px;border-radius:999px;
+    transform:rotate(-2deg);
+  }
+  .stamp:nth-child(2){transform:rotate(1.5deg);border-color:rgba(224,160,37,.6);color:var(--gold)}
+  .stamp:nth-child(3){transform:rotate(-1deg)}
+  .stamp:nth-child(4){transform:rotate(2deg);border-color:rgba(214,74,63,.6);color:#f0a49c}
+  .scroll-cue{
+    font-family:'JetBrains Mono',monospace;font-size:.7rem;
+    letter-spacing:.24em;text-transform:uppercase;
+    color:rgba(246,241,231,.55);
+    display:flex;align-items:center;gap:10px;
+  }
+  .scroll-cue .bar{width:40px;height:1px;background:rgba(246,241,231,.4);position:relative;overflow:hidden}
+  .scroll-cue .bar::after{content:"";position:absolute;inset:0;width:40%;background:var(--gold);animation:slide 2.4s ease-in-out infinite}
+  @keyframes slide{0%{transform:translateX(-100%)}100%{transform:translateX(250%)}}
+
+  /* ---------- intro note ---------- */
+  .note{padding:clamp(64px,10vw,120px) 0}
+  .note p{
+    font-family:'Fraunces',serif;font-weight:400;
+    font-size:clamp(1.5rem,4vw,2.5rem);line-height:1.32;
+    letter-spacing:-.01em;max-width:20ch;
+  }
+  .note p .hl{color:var(--coral);font-style:italic}
+  .note .sig{
+    margin-top:40px;font-family:'JetBrains Mono',monospace;
+    font-size:.8rem;letter-spacing:.14em;color:var(--ink-soft);
+  }
+
+  /* ---------- chapter header ---------- */
+  .chapter{padding:clamp(40px,7vw,80px) 0 clamp(24px,4vw,40px)}
+  .chapter-head{
+    display:grid;grid-template-columns:auto 1fr auto;
+    gap:20px;align-items:end;
+    border-top:2px solid var(--ink);padding-top:20px;
+  }
+  .chapter-no{
+    font-family:'JetBrains Mono',monospace;font-size:.8rem;
+    letter-spacing:.1em;color:var(--sea);font-weight:500;
+  }
+  .chapter-head h2{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(2rem,7vw,4rem);line-height:1;letter-spacing:-.02em;
+  }
+  .chapter-coord{
+    font-family:'JetBrains Mono',monospace;font-size:.72rem;
+    letter-spacing:.08em;color:var(--ink-soft);text-align:right;
+    line-height:1.7;
+  }
+  .chapter-intro{
+    margin-top:22px;max-width:60ch;
+    font-size:clamp(1rem,2.2vw,1.15rem);color:var(--ink-soft);
+  }
+
+  /* ---------- photo grids ---------- */
+  .gallery{display:grid;gap:14px;margin-top:8px}
+  .g-2{grid-template-columns:1fr 1fr}
+  .g-3{grid-template-columns:repeat(3,1fr)}
+  .frame{
+    position:relative;overflow:hidden;border-radius:4px;
+    background:var(--paper-2);box-shadow:var(--shadow);
+  }
+  .frame::after{
+    content:"";position:absolute;inset:0;
+    box-shadow:inset 0 0 0 1px rgba(18,35,59,.08);
+    border-radius:4px;pointer-events:none;
+  }
+  .tall{aspect-ratio:3/4}
+  .wide{aspect-ratio:4/3}
+  .hero-frame{aspect-ratio:3/4;grid-row:span 2}
+  .cap{
+    margin-top:10px;font-family:'JetBrains Mono',monospace;
+    font-size:.72rem;letter-spacing:.04em;color:var(--ink-soft);
+    display:flex;gap:8px;align-items:baseline;
+  }
+  .cap .tag{color:var(--gold);font-weight:500}
+  .feature{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:14px;align-items:stretch;
+  }
+  .feature .txt{
+    display:flex;flex-direction:column;justify-content:center;
+    padding:8px 4px;
+  }
+  .feature .txt .big{
+    font-family:'Fraunces',serif;font-weight:500;font-style:italic;
+    font-size:clamp(1.4rem,3.4vw,2.1rem);line-height:1.25;
+    letter-spacing:-.01em;
+  }
+  .feature .txt .small{margin-top:14px;color:var(--ink-soft);font-size:.98rem;max-width:32ch}
+
+  /* pull quote */
+  .pull{padding:clamp(40px,6vw,72px) 0}
+  .pull blockquote{
+    font-family:'Fraunces',serif;font-weight:400;font-style:italic;
+    font-size:clamp(1.6rem,4.6vw,3rem);line-height:1.25;
+    letter-spacing:-.01em;max-width:24ch;
+  }
+  .pull .mk{color:var(--gold);font-size:1.4em;line-height:0}
+  .pull cite{
+    display:block;margin-top:20px;font-style:normal;
+    font-family:'JetBrains Mono',monospace;font-size:.76rem;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--sea);
+  }
+
+  /* ---------- closing ---------- */
+  .closing{
+    background:var(--ink);color:var(--paper);
+    padding:clamp(72px,12vw,140px) 0;margin-top:clamp(40px,7vw,90px);
+    position:relative;overflow:hidden;
+  }
+  .closing::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(90% 60% at 20% 100%,rgba(47,125,140,.25),transparent 60%);
+  }
+  .closing .wrap{position:relative;z-index:2}
+  .closing h2{
+    font-family:'Fraunces',serif;font-weight:900;
+    font-size:clamp(2.4rem,9vw,6rem);line-height:.95;letter-spacing:-.02em;
+  }
+  .closing h2 em{font-style:italic;font-weight:400;color:var(--gold)}
+  .closing p{
+    margin-top:28px;max-width:46ch;font-size:clamp(1.05rem,2.4vw,1.25rem);
+    color:rgba(246,241,231,.8);
+  }
+  .ledger{
+    margin-top:48px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:rgba(246,241,231,.18);border:1px solid rgba(246,241,231,.18);
+  }
+  .ledger div{background:var(--ink);padding:22px 18px}
+  .ledger .n{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,5vw,2.8rem);color:var(--gold);line-height:1}
+  .ledger .l{margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,231,.6)}
+  .signoff{
+    margin-top:56px;padding-top:28px;border-top:1px solid rgba(246,241,231,.2);
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline;
+  }
+  .signoff .by{font-family:'Fraunces',serif;font-style:italic;font-size:1.5rem}
+  .signoff .meta{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,241,231,.5)}
+
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:720px){
+    .g-3{grid-template-columns:1fr 1fr}
+    .feature{grid-template-columns:1fr}
+    .hero-frame{grid-row:auto;aspect-ratio:4/3}
+    .chapter-head{grid-template-columns:1fr;gap:6px;align-items:start}
+    .chapter-coord{text-align:left}
+    .ledger{grid-template-columns:1fr 1fr}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important}
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="passport-top">
+      <div class="brand">TB <span>/ field notes</span></div>
+      <div class="brand"><span>issue</span> summer 2026</div>
+    </div>
+  </div>
+
+  <div class="wrap hero-center">
+    <div class="hero-kicker"><span class="dot"></span> Athens · Montego Bay · Atlanta · home</div>
+    <h1>The long<br>way <em>around.</em></h1>
+    <p class="hero-sub">One summer, four passport stamps, and the people I would go anywhere with.</p>
+    <div class="stamps">
+      <span class="stamp">Greece</span>
+      <span class="stamp">Jamaica</span>
+      <span class="stamp">FIFA Fest ATL</span>
+      <span class="stamp">Back home</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="scroll-cue"><span class="bar"></span> scroll to board</div>
+  </div>
+</header>
+
+<!-- ============ INTRO NOTE ============ -->
+<section class="note wrap reveal">
+  <p>Some summers you rest. This one, <span class="hl">we moved.</span> We chased ruins and rivers, festival lights and lake sunsets, and we did it together.</p>
+  <div class="sig mono">A recap, in four stops. — Taylor Bryant</div>
+</section>
+
+<!-- ============ CHAPTER 01 — GREECE ============ -->
+<section class="chapter wrap reveal">
+  <div class="chapter-head">
+    <div class="chapter-no">STOP 01</div>
+    <h2>Greece</h2>
+    <div class="chapter-coord">37.98° N, 23.72° E<br>Athens &amp; the isles</div>
+  </div>
+  <p class="chapter-intro">We started where the stories start. Marble columns and the old Olympic track, an afternoon that turned into a sail, and a pink little corner of Athens that felt like walking into a storybook. The kids stood on the winners' podium. We let them.</p>
+</section>
+
+<div class="wrap reveal">
+  <div class="feature">
+    <div class="frame tall"><img src="greece-red-swimsuit-lake.jpg" alt="Standing by the thermal lake in Athens in a red swimsuit" loading="lazy"></div>
+    <div class="txt">
+      <div class="big">The kind of blue you don't believe until you're standing in it.</div>
+      <div class="small">Lake Vouliagmeni, just outside the city, where the water stays warm all year.</div>
+    </div>
+  </div>
+  <div class="cap"><span class="tag">01 · GR</span> Vouliagmeni, Athens</div>
+</div>
+
+<div class="wrap reveal" style="margin-top:32px">
+  <div class="gallery g-3">
+    <div class="frame tall"><img src="greece-athens-columns.jpg" alt="Posing in white by ancient columns with the Acropolis in the distance" loading="lazy"></div>
+    <div class="frame tall"><img src="greece-sailboat.jpg" alt="On the bow of a sailboat off the Greek coast" loading="lazy"></div>
+    <div class="frame tall"><img src="greece-little-kook.jpg" alt="Walking through the whimsical Little Kook cafe in Athens" loading="lazy"></div>
+  </div>
+  <div class="cap"><span class="tag">03</span> Ancient stone, open water, and Little Kook's wonderland</div>
+</div>
+
+<div class="wrap reveal" style="margin-top:14px">
+  <div class="gallery g-2">
+    <div class="frame wide"><img src="greece-olympic-podium.jpg" alt="The two boys standing on the number one Olympic podium, fists raised" loading="lazy"></div>
+    <div class="frame wide"><img src="greece-family-street.jpg" alt="Family selfie on a sunny street in Athens" loading="lazy"></div>
+  </div>
+  <div class="cap"><span class="tag">·</span> First place, obviously. Then straight into the streets of Athens.</div>
+</div>
+
+<div class="wrap reveal" style="margin-top:14px">
+  <div class="gallery g-3">
+    <div class="frame tall"><img src="greece-boys-lobby.jpg" alt="The two boys posing together in a hotel lobby" loading="lazy"></div>
+    <div class="frame tall"><img src="greece-marina-night.jpg" alt="Two women at a marina restaurant at night with sailboats behind" loading="lazy"></div>
+    <div class="frame tall"><img src="greece-vineyard.jpg" alt="Three adults posing at a Greek vineyard in the hills" loading="lazy"></div>
+  </div>
+  <div class="cap"><span class="tag">·</span> Travel crew. Marina dinners and a vineyard in the hills.</div>
+</div>
+
+<!-- pull quote -->
+<section class="pull wrap reveal">
+  <blockquote><span class="mk">“</span>We didn't just see the old world. We let the kids stand on top of it.<span class="mk">”</span></blockquote>
+  <cite>Panathenaic Stadium, Athens</cite>
+</section>
+
+<!-- ============ CHAPTER 02 — JAMAICA ============ -->
+<section class="chapter wrap reveal">
+  <div class="chapter-head">
+    <div class="chapter-no">STOP 02</div>
+    <h2>Jamaica</h2>
+    <div class="chapter-coord">18.47° N, 77.92° W<br>Martha Brae River</div>
+  </div>
+  <p class="chapter-intro">From ancient stone to running water. A bamboo raft, a slow current under a stone bridge, and absolutely nowhere to be. This was the exhale of the whole summer.</p>
+</section>
+
+<div class="wrap reveal">
+  <div class="feature">
+    <div class="frame tall"><img src="jamaica-raft-relax.jpg" alt="Lying back and relaxing on the bamboo raft, throwing up peace signs" loading="lazy"></div>
+    <div class="txt">
+      <div class="big">Poled down the river by hand, one bamboo push at a time.</div>
+      <div class="small">No motor, no rush. Just green water, the guide's steady rhythm, and sun.</div>
+    </div>
+  </div>
+  <div class="cap"><span class="tag">02 · JM</span> Rafting the Martha Brae</div>
+</div>
+
+<div class="wrap reveal" style="margin-top:32px">
+  <div class="gallery g-2">
+    <div class="frame wide" style="grid-column:1 / -1"><img src="jamaica-raft-bridge.jpg" alt="Standing on the bamboo raft holding the pole under a historic stone bridge" loading="lazy"></div>
+  </div>
+  <div class="cap"><span class="tag">·</span> Under the old bridge, Jamaican flags lining the banks</div>
+</div>
+
+<!-- ============ CHAPTER 03 — FIFA FEST ATL ============ -->
+<section class="chapter wrap reveal">
+  <div class="chapter-head">
+    <div class="chapter-no">STOP 03</div>
+    <h2>FIFA Fest, ATL</h2>
+    <div class="chapter-coord">33.75° N, 84.39° W<br>Atlanta, Georgia</div>
+  </div>
+  <p class="chapter-intro">Back on home soil, and the whole world came to us. Jerseys on, generations deep, the kids in full kit for the fan festival. Brunch first, football always.</p>
+</section>
+
+<div class="wrap reveal">
+  <div class="gallery g-2">
+    <div class="frame tall"><img src="fifa-family-couch.jpg" alt="Family of four in soccer jerseys on a couch beneath an ATL FIFA 2026 art piece" loading="lazy"></div>
+    <div class="frame tall"><img src="fifa-station.jpg" alt="Family in soccer jerseys at the transit station heading to the festival" loading="lazy"></div>
+  </div>
+  <div class="cap"><span class="tag">03 · US</span> Four generations, four jerseys, one city</div>
+</div>
+
+<div class="wrap reveal" style="margin-top:14px">
+  <div class="gallery g-2">
+    <div class="frame wide"><img src="fifa-welcome-sign.jpg" alt="The two kids hugging in front of the Atlanta welcome sculpture at the fan fest" loading="lazy"></div>
+    <div class="frame wide"><img src="fifa-batters-brunch.jpg" alt="The two younger kids making a heart with their hands at brunch" loading="lazy"></div>
+  </div>
+  <div class="cap"><span class="tag">·</span> Welcome to Atlanta. Fuel up at brunch first.</div>
+</div>
+
+<!-- ============ CHAPTER 04 — HOME ============ -->
+<section class="chapter wrap reveal">
+  <div class="chapter-head">
+    <div class="chapter-no">STOP 04</div>
+    <h2>Back home</h2>
+    <div class="chapter-coord">the last stop<br>golden hour, GA</div>
+  </div>
+  <p class="chapter-intro">The best trips end where they should. Pink hats and cowboy boots by the lake, a backyard full of people who knew us before the passport stamps. This is the part that makes the leaving worth it.</p>
+</section>
+
+<div class="wrap reveal">
+  <div class="feature">
+    <div class="frame tall"><img src="home-cowgirls-trio.jpg" alt="Three friends in pink cowgirl outfits posing by the lake at golden hour" loading="lazy"></div>
+    <div class="txt">
+      <div class="big">Pink boots, lake light, and the friends who make home feel like a destination.</div>
+      <div class="small">A cowgirl-themed golden hour that turned into the whole point of summer.</div>
+    </div>
+  </div>
+  <div class="cap"><span class="tag">04 · HOME</span> Lakeside, golden hour</div>
+</div>
+
+<div class="wrap reveal" style="margin-top:32px">
+  <div class="gallery g-3">
+    <div class="frame tall"><img src="home-cowgirl-mom-daughter.jpg" alt="Mother and daughter in matching pink cowgirl outfits holding hands by the lake" loading="lazy"></div>
+    <div class="frame tall"><img src="home-cowgirls-trio2.jpg" alt="Three friends posing together in cowgirl outfits by the water" loading="lazy"></div>
+    <div class="frame tall"><img src="home-backyard-friends.jpg" alt="Two friends smiling at a backyard gathering in the evening" loading="lazy"></div>
+  </div>
+  <div class="cap"><span class="tag">·</span> Little cowgirl, the crew, and the backyard where it all lands</div>
+</div>
+
+<!-- ============ CLOSING ============ -->
+<footer class="closing">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--gold);margin-bottom:20px">Final tally</div>
+    <h2>Same crew.<br><em>Longer</em> map.</h2>
+    <p>Four stops, two continents, and every mile better because of the people in the frame. Here's to the next departure board.</p>
+
+    <div class="ledger">
+      <div><div class="n">4</div><div class="l">stops</div></div>
+      <div><div class="n">2</div><div class="l">continents</div></div>
+      <div><div class="n">19</div><div class="l">frames kept</div></div>
+      <div><div class="n">1</div><div class="l">summer</div></div>
+    </div>
+
+    <div class="signoff">
+      <div class="by">Taylor Bryant</div>
+      <div class="meta">Field notes · Summer 2026</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
